@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+		<title>Abhinandan Education - Question Bank</title>
+	</head>
+	<link rel="stylesheet" href="QuestionBank.css" type="text/css" media="(orientation:landscape)"/> 
+	<link rel="stylesheet" href="Mobile.css" type="text/css" media="(orientation:portrait)" /> 
+	<script src="cookie.js"></script>
+	<script src="Alert.js"></script>
+	<script src="Calculations.js"></script>
+	<body onload="return(load_details());">
+	<h1> Abhinandan Education </h1>
+	<p id="error_string" class="error"></p>
+
+	<p id="question" class="question"></p>
+	<form onsubmit="check_answer(  ); return false;">
+		<input type="hidden" name="num_problems" id="num_problems" value=25>
+		<input type="hidden" name="num_correct" id="num_correct" value=0>
+		<input type="hidden" name="time_elapsed" id="time_elapsed" value=0>
+		<input type="hidden" name="question_number" id="question_number" value=0>
+		<input type="hidden" name="start_time" id="start_time" value=0>
+		<input type="hidden" name="answer" id="answer" value=0>
+		<input type="hidden" name="session_scores" id="session_scores" value="">
+		<div id="answer_area">
+		<label for="input_answer">Answer:</label><input type="text" name="input_answer" id="input_answer" class="textbox" >
+		<button type="submit" class="submit" name="check_button" id="check_button" target="">Check</button>
+		</div>
+	</form>
+	</p>
+	
+	<select id="mode" onchange="set_mode(  )">
+		<option value=3> Division </option>
+		<option value=1> Multiplication</option>
+		<option value=0> Addition</option>
+		<option value=2> Subtraction</option>
+	</select>
+	<select id="complexity" onchange="load_question(  )">
+		<option value=1> Easy</option>
+		<option value=2> Medium</option>
+		<option value=5> Hard </option>
+		<option value=10> Extreme </option>
+	</select>
+	<select id="accuracy">
+	</select>
+
+</html>
